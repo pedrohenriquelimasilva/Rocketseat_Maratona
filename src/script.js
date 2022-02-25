@@ -157,25 +157,25 @@ const Form = {
     Form.date.value = ""
   },
   submit(event){
-    //retirar o corpotamento base
+    //remove base behavior
     event.preventDefault()
 
-    //validar os valores
+    
     try{
+      //validate content
       Form.validateFields()
 
-      //formatar Valores
       const transaction = Form.formatValues()
-      //salvar
+
+      //save new transaction
       Form.save(transaction) 
 
-      //limpar form
+      //clear form
       Form.clearFields()
 
-      //feixar o modal
+      //close the modal
       stateNewTransaction()
     } catch(error){
-      //fazer um modal para quando ter um erro nessa forma de formulario
       alert(error.message)
     }
     
